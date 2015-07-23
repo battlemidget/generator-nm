@@ -23,7 +23,7 @@ describe('generator', function () {
 			'.editorconfig',
 			'.gitattributes',
 			'.gitignore',
-			'.jshintrc',
+			'.eslintrc',
 			'.travis.yml',
 			'index.js',
 			'license',
