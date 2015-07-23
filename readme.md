@@ -1,4 +1,4 @@
-# generator-nm [![Build Status](https://travis-ci.org/battlemidget/generator-nm.svg?branch=master)](https://travis-ci.org/battlemidget/generator-nm)
+# @battlemidget/generator-nm [![Build Status](https://travis-ci.org/battlemidget/generator-nm.svg?branch=master)](https://travis-ci.org/battlemidget/generator-nm)
 
 > Scaffold out a [node module](https://github.com/battlemidget/generator-nm)
 
