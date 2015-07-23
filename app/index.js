@@ -1,42 +1,42 @@
-'use strict';
-var superb = require('superb');
-var normalizeUrl = require('normalize-url');
-var humanizeUrl = require('humanize-url');
-var yeoman = require('yeoman-generator');
-var _s = require('underscore.string');
+"use strict";
+var superb = require("superb");
+var normalizeUrl = require("normalize-url");
+var humanizeUrl = require("humanize-url");
+var yeoman = require("yeoman-generator");
+var _s = require("underscore.string");
 
 module.exports = yeoman.generators.Base.extend({
 	init: function () {
 		var cb = this.async();
 
 		this.prompt([{
-			name: 'moduleName',
-			message: 'What do you want to name your module?',
-			default: this.appname.replace(/\s/g, '-'),
+			name: "moduleName",
+			message: "What do you want to name your module?",
+			default: this.appname.replace(/\s/g, "-"),
 			filter: function (val) {
 				return _s.slugify(val);
 			}
 		}, {
-			name: 'githubUsername',
-			message: 'What is your GitHub username?',
+			name: "githubUsername",
+			message: "What is your GitHub username?",
 			store: true,
 			validate: function (val) {
-				return val.length > 0 ? true : 'You have to provide a username';
+				return val.length > 0 ? true : "You have to provide a username";
 			}
 		}, {
-			name: 'website',
-			message: 'What is the URL of your website?',
+			name: "website",
+			message: "What is the URL of your website?",
 			store: true,
 			validate: function (val) {
-				return val.length > 0 ? true : 'You have to provide a website URL';
+				return val.length > 0 ? true : "You have to provide a website URL";
 			},
 			filter: function (val) {
 				return normalizeUrl(val);
 			}
 		}, {
-			name: 'cli',
-			message: 'Do you need a CLI?',
-			type: 'confirm',
+			name: "cli",
+			message: "Do you need a CLI?",
+			type: "confirm",
 			default: false
 		}], function (props) {
 			var tpl = {
@@ -56,20 +56,20 @@ module.exports = yeoman.generators.Base.extend({
 			}.bind(this);
 
 			this.fs.copyTpl([
-				this.templatePath() + '/**',
-				'!**/cli.js'
+				this.templatePath() + "/**",
+				"!**/cli.js"
 			], this.destinationPath(), tpl);
 
 			if (props.cli) {
-				this.fs.copyTpl(this.templatePath('cli.js'), this.destinationPath('cli.js'), tpl);
+				this.fs.copyTpl(this.templatePath("cli.js"), this.destinationPath("cli.js"), tpl);
 			}
 
-			mv('editorconfig', '.editorconfig');
-			mv('gitattributes', '.gitattributes');
-			mv('gitignore', '.gitignore');
-			mv('jshintrc', '.jshintrc');
-			mv('travis.yml', '.travis.yml');
-			mv('_package.json', 'package.json');
+			mv("editorconfig", ".editorconfig");
+			mv("gitattributes", ".gitattributes");
+			mv("gitignore", ".gitignore");
+			mv("eslintrc", ".eslintrc");
+			mv("travis.yml", ".travis.yml");
+			mv("_package.json", "package.json");
 
 			cb();
 		}.bind(this));

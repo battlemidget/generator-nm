@@ -1,9 +1,9 @@
 {
-  "name": "generator-nm",
+  "name": "@battlemidget/generator-nm",
   "version": "1.4.1",
   "description": "Scaffold out a node module",
   "license": "MIT",
-  "repository": "sindresorhus/generator-nm",
+  "repository": "battlemidget/generator-nm",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
