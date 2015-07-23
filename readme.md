@@ -4,7 +4,8 @@
 
 Optionally with a [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
 
-This is what I use for [my own modules](https://www.npmjs.com/~battlemidget).
+This is a modified generate which makes use of eslint and replace tabs for spaces.
+It is what I use for [my own modules](https://www.npmjs.com/~battlemidget).
 
 ![](screenshot.png)
 
@@ -12,7 +13,7 @@ This is what I use for [my own modules](https://www.npmjs.com/~battlemidget).
 ## Install
 
 ```
-$ npm install --global generator-nm
+$ npm install --global @battlemidget/generator-nm
 ```
 
 
@@ -21,7 +22,7 @@ $ npm install --global generator-nm
 With [yo](https://github.com/yeoman/yo):
 
 ```
-$ yo nm
+$ yo @battlemidget/nm
 ```
 
 
